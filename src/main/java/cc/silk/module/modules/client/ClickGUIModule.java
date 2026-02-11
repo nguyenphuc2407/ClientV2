@@ -22,9 +22,9 @@ public final class ClickGUIModule extends Module {
 
     @Override
     public void onEnable() {
-        if (mc == null) return;
-
-        mc.setScreen(new NewClickGUI());
+        if (mc != null) {
+            mc.setScreen(new NewClickGUI());
+        }
     }
 
     @Override
@@ -34,9 +34,5 @@ public final class ClickGUIModule extends Module {
         }
     }
 
-    // KHÔNG override vì Module không có onSettingChange() để override
-    public void onSettingChange() {
-        // ModeSetting của Silk dùng getMode()
-        ThemeManager.setTheme(theme.getMode());
-    }
+    // KHÔNG cần onSettingChange — ThemeManager không hỗ trợ đổi theme trực tiếp
 }
