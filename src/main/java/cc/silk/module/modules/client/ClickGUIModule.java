@@ -22,28 +22,21 @@ public final class ClickGUIModule extends Module {
 
     @Override
     public void onEnable() {
-        if (mc == null) {
-            return;
-        }
+        if (mc == null) return;
 
-        // Mở gui
         mc.setScreen(new NewClickGUI());
-
-        // KHÔNG tắt module ngay sau mở
-        // Nếu bạn muốn auto disable thì thêm vào ModuleManager để nó không ảnh hưởng GUI
     }
 
     @Override
     public void onDisable() {
-        // Nếu tắt GUI khi module disable thì thêm cái này vào
         if (mc != null && mc.currentScreen instanceof NewClickGUI) {
             mc.setScreen(null);
         }
     }
 
-    @Override
+    // KHÔNG override vì Module không có onSettingChange() để override
     public void onSettingChange() {
-        // cập nhật theme ngay khi đổi
-        ThemeManager.setTheme(theme.getValue());
+        // ModeSetting của Silk dùng getMode()
+        ThemeManager.setTheme(theme.getMode());
     }
 }
