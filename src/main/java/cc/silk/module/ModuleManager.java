@@ -57,7 +57,7 @@ public final class ModuleManager {
         // Combat
         add(
                 new TriggerBot(),
-                new HitCob.java(), new StunCob(),
+                new HitCob(), new StunCob(),
                 new AutoCart(), new CrystalOptimizer(), new XbowCart());
         // Movement
         add(new Sprint(), new AutoFirework(), new AutoHeadHitter(), new KeepSprint(), new SnapTap());
