@@ -56,18 +56,18 @@ public final class ModuleManager {
     private void addModules() {
         // Combat
         add(
-                new AutoCart(),new XbowCart());
+           new AutoCart(),new XbowCart());
         // Movement
-        add(new Sprint(), new AutoFirework(), new AutoHeadHitter(), new KeepSprint(), new SnapTap());
+        add(
+            new Sprint(), new AutoFirework(), new AutoHeadHitter(), new KeepSprint(), new SnapTap());
 
         // Player
-        add(
-              
+        add(    
                 new AutoDrain(), 
                 new PingSpoof());
 
         // Render
-                new ArrayList(),  new BlurTest(), new AspectRatio());
+        add(    new ArrayList(),  new BlurTest(), new AspectRatio());
 
         // Misc
         add(
@@ -75,7 +75,8 @@ public final class ModuleManager {
                 new Friends());
 
         // Client
-        add(new NewClickGUIModule(), new ClientSettingsModule(), new Client(), new Debugger(),
+        add(
+                new NewClickGUIModule(), new ClientSettingsModule(), new Client(), new Debugger(),
                 new Secret(), new KeybindsModule());
     }
 
